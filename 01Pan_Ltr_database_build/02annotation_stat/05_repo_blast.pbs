@@ -1,0 +1,28 @@
+###define PBS arguments
+
+#PBS -N repeat_blast
+#PBS -l nodes=1:ppn=10,walltime=30:00:00:00
+#PBS -q batch2
+#PBS -j oe
+#PBS -o log_repeat_id
+
+###job starting reminder
+echo "Starting job at:"
+date -d +20minute +'%Y-%m-%d %H:%M:%S'
+###job dir
+cd $PBS_O_WORKDIR
+
+###variable
+#query=""
+rep_base="/public/home/huangyj/pan_rice/oryrep.ref"
+###job command
+source activate /public/home/huangyj/anaconda3/envs/r_p
+
+makeblastdb -in $rep_base -dbtype nucl -parse_seqids -out ./ory_repbase
+blastn -task blastn -num_threads 20 -db ory_repbase -query ${query} -outfmt 6 -out ${query##*/}_blast.out
+
+conda deactivate
+#conda deactivate
+echo "Finished at:"
+date -d +20minute +'%Y-%m-%d %H:%M:%S'
+
