@@ -12,5 +12,5 @@ get inner sequence of LTR
 ## 15 16 17 LTR_insert_intergerity.py  
 calculate LTR insert location along the surrounding CEN155  
   
-## 17_get_SZ-22_cluster.py  
+## 18_get_SZ-22_cluster.py  
 get clustered SZ-22 annotation  
