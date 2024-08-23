@@ -17,7 +17,7 @@ ltr="/public/home/huangyj/anaconda3/envs/LAI/bin/LTR_retriever"
 source activate /public/home/huangyj/anaconda3/envs/repeatscout
 ##job area
 ##Step1
-perl /public/home/huangyj/software/RepeatModeler-master/02_Ltr_and_classfier.pl -threads 5 -database $speciesname -LTRStruct
+perl /public/home/huangyj/software/RepeatModeler-master/_02_Ltr_and_classfier.pl -threads 5 -database $speciesname -LTRStruct
 
 echo "base build"
 ##Step2
